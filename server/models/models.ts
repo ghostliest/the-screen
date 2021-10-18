@@ -48,7 +48,7 @@ const FilmDetails = <FilmDetailsModelStatic>sequelize.define('film-details', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 	ageRating: { type: DataTypes.INTEGER, allowNull: false },
 	duration: { type: DataTypes.INTEGER, allowNull: false },
-	description: { type: DataTypes.STRING, allowNull: false },
+	description: { type: DataTypes.TEXT, allowNull: false },
 	seasonCount: { type: DataTypes.INTEGER, allowNull: true },
 	youtubeTrailerKey: { type: DataTypes.STRING, allowNull: false }
 });
