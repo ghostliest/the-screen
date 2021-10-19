@@ -1,22 +1,29 @@
 require('dotenv').config()
-import sequalize from './db';
 import express from 'express';
-const app = express();
+import path from 'path'
+import sequelize from './db';
+import models = require('./models/models');
+const cors = require('cors');
+import fileupload from 'express-fileupload';
+import router from './routes/index';
 
 const PORT = process.env.PORT || 5000
 
-app.get('/', (req, res) => {
-	res.status(200).send('Server is Working!')
-})
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use('/images', express.static(path.resolve(__dirname, 'static')));
+app.use(fileupload({}));
+app.use('/api', router);
 
 const start = async () => {
 	try {
-		await sequalize.authenticate();
-		await sequalize.sync();
+		await sequelize.authenticate();
+		await sequelize.sync();
 		app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
 	} catch (e) {
 		console.log(e);
 	}
-}
+};
 
 start();
