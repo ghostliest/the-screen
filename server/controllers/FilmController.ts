@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import { Film, FilmDetails, FilmRating } from "../models/models";
+import ApiError from '../error/ApiError';
 import { FilmDetailsModelInterface, FilmModelInterface } from '../types/filmsTypes';
 
 class FilmController {
@@ -22,7 +23,8 @@ class FilmController {
 
 			return res.json(await this.createRecords(filmInfo, detailsInfo));
 		} catch (e: any) {
-			console.log(e.message)
+			console.log(e.message);
+			next(ApiError.badRequest(e.message))
 		}
 	}
 
@@ -47,7 +49,7 @@ class FilmController {
 
 	private async createImg(img: any) {
 		const filename: string = `${uuidv4()}.jpg`;
-		await img.mv(path.resolve(__dirname, '..', 'static', filename))
+		await img.mv(path.resolve(__dirname, '..', 'static', filename));
 		return filename;
 	}
 
