@@ -11,7 +11,7 @@ const User = <UserModelInterfaceStatic>sequelize.define('user', {
 	role: { type: DataTypes.STRING, defaultValue: "USER" },
 });
 
-const WatchLater = sequelize.define('watch-later', {
+const WatchLater = sequelize.define('watchLater', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
@@ -23,7 +23,7 @@ const Viewed = sequelize.define('viewed', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
-const WatchLaterFilm = sequelize.define('watch-later_film', {
+const WatchLaterFilm = sequelize.define('watchLater_film', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
@@ -71,12 +71,12 @@ const Upcoming = sequelize.define('upcoming', {
 
 const Country = sequelize.define('country', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-	countrie: { type: DataTypes.STRING, allowNull: false }
+	country: { type: DataTypes.STRING, allowNull: false }
 });
 
 const Director = sequelize.define('director', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-	director: { type: DataTypes.STRING, allowNull: false }
+	name: { type: DataTypes.STRING, allowNull: false }
 });
 
 const Genre = sequelize.define('genre', {
@@ -84,35 +84,35 @@ const Genre = sequelize.define('genre', {
 	genre: { type: DataTypes.STRING, allowNull: false }
 });
 
-const Star = sequelize.define('star', {
+const Actor = sequelize.define('actor', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-	star: { type: DataTypes.STRING, allowNull: false }
+	name: { type: DataTypes.STRING, allowNull: false }
 });
 
-const FilmDetailCountry = sequelize.define('film-detail_Country', {
+const FilmDetailCountry = sequelize.define('film-detail_country', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
-const FilmDetailDirector = sequelize.define('film-detail_Director', {
+const FilmDetailDirector = sequelize.define('film-detail_director', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
-const FilmDetailGenre = sequelize.define('film-detail_Genre', {
+const FilmDetailGenre = sequelize.define('film-detail_genre', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
-const FilmDetailStar = sequelize.define('film-detail_Star', {
+const FilmDetailActor = sequelize.define('film-detail_actor', {
 	id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 });
 
 
-User.hasOne(WatchLater)
+User.hasOne(WatchLater, { as: "watchLater" })
 WatchLater.belongsTo(User)
 
-User.hasOne(Favorite)
+User.hasOne(Favorite, { as: "favorite" })
 Favorite.belongsTo(User)
 
-User.hasOne(Viewed)
+User.hasOne(Viewed, { as: "viewed" })
 Viewed.belongsTo(User)
 
 WatchLater.hasMany(WatchLaterFilm)
@@ -148,17 +148,17 @@ FilmDetails.belongsTo(Film)
 Film.hasOne(FilmRating, { as: "rating", foreignKey: "filmId" })
 FilmRating.belongsTo(Film)
 
-FilmDetails.hasMany(FilmDetailCountry)
+FilmDetails.hasMany(FilmDetailCountry, { as: "countries" })
 FilmDetailCountry.belongsTo(FilmDetails)
 
-FilmDetails.hasMany(FilmDetailDirector)
+FilmDetails.hasMany(FilmDetailDirector, { as: "directors" })
 FilmDetailDirector.belongsTo(FilmDetails)
 
-FilmDetails.hasMany(FilmDetailGenre)
+FilmDetails.hasMany(FilmDetailGenre, { as: "genres" })
 FilmDetailGenre.belongsTo(FilmDetails)
 
-FilmDetails.hasMany(FilmDetailStar)
-FilmDetailStar.belongsTo(FilmDetails)
+FilmDetails.hasMany(FilmDetailActor, { as: "actors" })
+FilmDetailActor.belongsTo(FilmDetails)
 
 Country.hasMany(FilmDetailCountry)
 FilmDetailCountry.belongsTo(Country)
@@ -169,8 +169,8 @@ FilmDetailDirector.belongsTo(Director)
 Genre.hasMany(FilmDetailGenre)
 FilmDetailGenre.belongsTo(Genre)
 
-Star.hasMany(FilmDetailStar)
-FilmDetailStar.belongsTo(Star)
+Actor.hasMany(FilmDetailActor)
+FilmDetailActor.belongsTo(Actor, { as: "actor" })
 
 export {
 	User,
@@ -188,9 +188,9 @@ export {
 	Country,
 	Director,
 	Genre,
-	Star,
+	Actor,
 	FilmDetailCountry,
 	FilmDetailDirector,
 	FilmDetailGenre,
-	FilmDetailStar
+	FilmDetailActor
 }
