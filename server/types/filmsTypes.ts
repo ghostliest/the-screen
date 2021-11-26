@@ -14,9 +14,9 @@ export type FilmModelStatic = typeof Model & {
 }
 
 export interface FilmDetailsModelInterface extends Model, BaseModelInterface {
-	readonly filmId: number,
+	filmId: number,
 	duration: number,
-	description: string,
+	description?: string,
 	ageRating: number,
 	youtubeTrailerKey: string,
 	seasonCount: null | number
@@ -25,6 +25,20 @@ export interface FilmDetailsModelInterface extends Model, BaseModelInterface {
 export type FilmDetailsModelStatic = typeof Model & {
 	new(values?: object, options?: BuildOptions): FilmDetailsModelInterface;
 }
+
+export interface FilmDetailsMetaModelInterface extends Model, BaseModelInterface {
+	actors: string[],
+	directors: string[],
+	countries: string[],
+	genres: string[],
+	[key: string]: any
+}
+
+export interface FullFilmModelInterface extends
+	BaseModelInterface,
+	FilmModelInterface,
+	FilmDetailsModelInterface,
+	FilmDetailsMetaModelInterface { }
 
 export interface PaginationQueryInterface {
 	page: number,

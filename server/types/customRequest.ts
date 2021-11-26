@@ -7,5 +7,6 @@ export default interface CustomRequest extends Request {
 		role: string,
 		iat: number,
 		exp: number
-	}
+	},
+	local?: boolean
 }

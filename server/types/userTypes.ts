@@ -2,6 +2,7 @@ import { BuildOptions, Model } from 'sequelize';
 import { BaseModelInterface } from './baseTypes';
 
 export interface UserModelInterface extends Model, BaseModelInterface {
+	id: number,
 	email: string,
 	username: string,
 	password: string,
