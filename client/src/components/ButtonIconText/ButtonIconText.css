@@ -1,0 +1,20 @@
+.add_btn {
+	display: flex;
+	flex-direction: row;
+	padding: 8px 10px;
+	gap: 10px;
+	border-radius: var(--btn-border-radius);
+	background: var(--black-light);
+	color: var(--gray-light);
+	transition: trasnform .2s ease, background-color .2s ease;
+}
+
+.add_btn:hover {
+	background: var(--black-light-hover);
+}
+
+.add_btn-icon>svg {
+	fill: var(--orange);
+	width: 14px;
+	height: 14px;
+}
