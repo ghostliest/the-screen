@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
 export interface IButtonIconText {
 	text: string,
-	children: any
+	children: ReactNode,
+	transparent?: boolean
 	onClick: () => void
 }
