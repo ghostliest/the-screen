@@ -1,0 +1,23 @@
+.btn-text {
+	color: #fff;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: var(--btn-border-radius);
+	transition: background .2s ease-in-out;
+}
+
+.btn-secondary {
+	background: var(--black-light);
+}
+
+.btn-secondary:hover {
+	background: var(--black-light-hover);
+}
+
+.btn-primary {
+	background: var(--purple);
+}
+
+.btn-primary:hover {
+	background: var(--purple-hover);
+}
