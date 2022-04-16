@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useTypeSelector, useActions } from '../../hooks'
 import {
@@ -12,32 +12,51 @@ import './Header.css'
 
 export const Header = () => {
 	const { isAuth, user } = useTypeSelector(state => state.user)
-	const navigate = useNavigate()
-	const location = useLocation()
-	const { setLogout } = useActions()
+	const { height: stateHeight } = useTypeSelector(state => state.componentsInfo.header)
 
-	const ref = useRef() as any
+	const navigate = useNavigate()
+
+	const location = useLocation()
+
+	const { setLogout, setHeaderHeight } = useActions()
+
+	const [height, setHeight] = useState(0)
+
+	const headerRef = useRef() as any
 
 	useEffect(() => {
 		console.log('location: ', location)
 	}, [location])
 
 	useEffect(() => {
-		const elheight = +window?.getComputedStyle(ref?.current).height.split('p')[0]
-		const elPadding = +window?.getComputedStyle(ref?.current).padding.split('p')[0]
+		setHeight(headerRef?.current?.clientHeight)
+	}, [])
+
+	useEffect(() => {
+		const elheight = +window?.getComputedStyle(headerRef?.current).height.split('p')[0]
+		const elPadding = +window?.getComputedStyle(headerRef?.current).padding.split('p')[0]
+
 		const onScroll = () => {
-			if (ref?.current) {
+			if (headerRef?.current) {
 				const scrollPos = window.scrollY
 				if (scrollPos > elheight) {
-					ref.current.style.padding = '10px'
+					headerRef.current.style.padding = '10px'
+					setHeight(elheight - elPadding)
 				} else {
-					ref.current.style.padding = `${elPadding}px`
+					headerRef.current.style.padding = `${elPadding}px`
+					setHeight(elheight)
 				}
 			}
 		}
 		window.addEventListener('scroll', onScroll)
 		return () => window.removeEventListener('scroll', onScroll)
 	}, [onscroll])
+
+	useEffect(() => {
+		if (stateHeight !== height) {
+			setHeaderHeight(height)
+		}
+	}, [height])
 
 	const handleClickLogout = (e: React.MouseEvent) => {
 		e.preventDefault()
@@ -145,7 +164,7 @@ export const Header = () => {
 	}
 
 	return (
-		<div className="header-wrapper" ref={ref}>
+		<div className="header-wrapper" ref={headerRef}>
 			<header className="header">
 				<Logo />
 				<div className='search_input-header'>
