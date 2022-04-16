@@ -1,4 +1,5 @@
-import { ContentActionTypesEnum, IFullContent, IInitialContentState, IMiniContent, IMiniContentWithQuantity } from '../types/contentTypes'
+import { ContentActionTypesEnum, IFullContent, IInitialContentState, IMiniContent } from '../types/contentTypes'
+// IMiniContentWithQuantity
 
 const miniContentInitial: IMiniContent = {
 	id: 0,
@@ -32,9 +33,39 @@ export const fullContentInitial: IFullContent = {
 	genres: [{ id: 0, value: '' }]
 }
 
-const contentInitial: IMiniContentWithQuantity = {
+// const contentInitial: IMiniContentWithQuantity = {
+// 	count: 0,
+// 	rows: [miniContentInitial]
+// }
+
+interface IFilmsAndCount {
+	count: number,
+	rows: [{
+		id: number,
+		title: string,
+		year: number,
+		img: string,
+		isFilm: boolean,
+		completionYear: number | null,
+		ratingsCount: number,
+		starsCount: number,
+		youtubeTrailerKey: string
+	}]
+}
+
+const contentInitial: IFilmsAndCount = {
 	count: 0,
-	rows: [miniContentInitial]
+	rows: [{
+		id: 0,
+		title: '',
+		year: 0,
+		img: '',
+		isFilm: true,
+		completionYear: null,
+		ratingsCount: 0,
+		starsCount: 0,
+		youtubeTrailerKey: ''
+	}]
 }
 
 const initialState: IInitialContentState = {

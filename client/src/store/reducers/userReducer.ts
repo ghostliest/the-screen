@@ -1,13 +1,20 @@
 import { UserActionTypesEnum, UserInterface } from '../types/userTypes'
 
-const initialState = {
-	user: {} as UserInterface,
+const initialState: IInitialState = {
+	user: null,
 	isAuth: false,
 	isAdmin: false,
 	isLoading: true
 }
 
-const userReducer = (state = initialState, { type, payload }: any) => {
+interface IInitialState {
+	user: UserInterface | null,
+	isAuth: boolean,
+	isAdmin: boolean,
+	isLoading: boolean
+}
+
+const userReducer = (state = initialState, { type, payload }: any): IInitialState => {
 	switch (type) {
 	case UserActionTypesEnum.SET_USER:
 		return { ...state, user: payload }
@@ -16,7 +23,7 @@ const userReducer = (state = initialState, { type, payload }: any) => {
 	case UserActionTypesEnum.SET_AUTH:
 		return { ...state, isAuth: payload }
 	case UserActionTypesEnum.SET_LOGOUT:
-		return { ...state, user: {}, isAuth: false, isAdmin: false }
+		return { ...state, user: null, isAuth: false, isAdmin: false }
 	case UserActionTypesEnum.SET_LOADING:
 		return { ...state, isLoading: payload }
 	default:

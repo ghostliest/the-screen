@@ -1,8 +1,9 @@
+import { IFilmsAndCount } from '../../../../server/interfaces/services/IFilmService'
 /* eslint-disable no-unused-vars */
 export interface IInitialContentState {
 	isLoading: boolean,
 	trailer: ITrailer,
-	films: IMiniContentWithQuantity,
+	films: IFilmsAndCount,
 	selected: {
 		current: IFullContent,
 		previous: IMiniContent[]
@@ -39,7 +40,7 @@ export interface IMiniContent {
 	year: number,
 	img: string,
 	isFilm: boolean,
-	completionYear: null,
+	completionYear: number | null,
 	rating: {
 		ratingsCount: number,
 		starsCount: number,
