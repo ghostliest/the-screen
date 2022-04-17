@@ -1,0 +1,16 @@
+.home-container {
+	margin-bottom: 200px;
+}
+
+.main-container {
+	width: 80vw;
+	margin: 30px auto;
+}
+
+.main-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 1vw;
+	width: 100%;
+	margin: 50px 0 50px 0;
+}
