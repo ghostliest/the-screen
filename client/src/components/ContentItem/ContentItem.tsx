@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FILM_ROUTE } from '../../utils/consts'
 import { ReactComponent as PlayIcon } from '../../pages/Content/play.svg'
 import { useActions } from '../../hooks'
 import { ImgSkeleton } from '../Skeleton/ImgSkeleton'
 import { IContentItemProps } from './ContentItem.props'
+import { textCrop } from '../../utils'
 import './ContentItem.css'
 
 export const ContentItem = ({ content: { id, img, title, year, completionYear, isFilm, details, rating }, visibleRate = true }: IContentItemProps) => {
 	const [imgDownloaded, setImgDownloaded] = useState(false)
-	const navigate = useNavigate()
 
 	if (id <= 0) {
 		return <></>
@@ -19,7 +19,7 @@ export const ContentItem = ({ content: { id, img, title, year, completionYear, i
 		<div className='item_wrapper'>
 			{ !imgDownloaded && <ImgSkeleton width={140} height={210} />}
 			{ details?.youtubeTrailerKey && <WatchTrailerBtn ytKey={details.youtubeTrailerKey} /> }
-			<div className='item' onClick={() => navigate(`${FILM_ROUTE}/${id}`)} style={{ opacity: imgDownloaded ? '1' : '0' }}>
+			<Link to={`${FILM_ROUTE}/${id}`} className='item' style={{ opacity: imgDownloaded ? '1' : '0' }}>
 				<div className="poster-wrapper">
 					<div className="poster-link">
 						<img src={process.env.REACT_APP_API_IMAGES_URL + img}
@@ -39,8 +39,8 @@ export const ContentItem = ({ content: { id, img, title, year, completionYear, i
 							</div>
 					}
 				</div>
-				<a className="captions">
-					<span className="title">{title.length > 30 ? title.slice(0, 30) + '...' : title}</span>
+				<div className="captions">
+					<span className="title">{textCrop(title, 30)}</span>
 					<div className='subtitle'>
 						<span className="subtitle">{year}</span>
 						{
@@ -48,8 +48,8 @@ export const ContentItem = ({ content: { id, img, title, year, completionYear, i
 								<span>{completionYear ? -completionYear : '...'}</span>
 						}
 					</div>
-				</a>
-			</div>
+				</div>
+			</Link>
 		</div>
 	)
 }
