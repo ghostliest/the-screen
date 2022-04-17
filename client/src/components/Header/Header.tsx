@@ -28,28 +28,31 @@ export const Header = () => {
 		console.log('location: ', location)
 	}, [location])
 
+	const onScroll = (elHeight: number, elPadding: number) => {
+		if (headerRef?.current) {
+			const scrollPos = window.scrollY
+			if (scrollPos > elHeight) {
+				headerRef.current.style.padding = '10px'
+				setHeight(elHeight - elPadding)
+			} else {
+				headerRef.current.style.padding = `${elPadding}px`
+				setHeight(elHeight)
+			}
+		}
+	}
+
 	useEffect(() => {
-		setHeight(headerRef?.current?.clientHeight)
+		const elHeight = headerRef?.current?.getBoundingClientRect().height
+		const elPadding = +window.getComputedStyle(headerRef?.current).padding.split('p')[0]
+		onScroll(elHeight, elPadding)
 	}, [])
 
 	useEffect(() => {
-		const elheight = +window?.getComputedStyle(headerRef?.current).height.split('p')[0]
-		const elPadding = +window?.getComputedStyle(headerRef?.current).padding.split('p')[0]
+		const elHeight = headerRef?.current?.getBoundingClientRect().height
+		const elPadding = +window.getComputedStyle(headerRef?.current).padding.split('p')[0]
 
-		const onScroll = () => {
-			if (headerRef?.current) {
-				const scrollPos = window.scrollY
-				if (scrollPos > elheight) {
-					headerRef.current.style.padding = '10px'
-					setHeight(elheight - elPadding)
-				} else {
-					headerRef.current.style.padding = `${elPadding}px`
-					setHeight(elheight)
-				}
-			}
-		}
-		window.addEventListener('scroll', onScroll)
-		return () => window.removeEventListener('scroll', onScroll)
+		window.addEventListener('scroll', () => onScroll(elHeight, elPadding))
+		return () => window.removeEventListener('scroll', () => onScroll(elHeight, elPadding))
 	}, [onscroll])
 
 	useEffect(() => {
