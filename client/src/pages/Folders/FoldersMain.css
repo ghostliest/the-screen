@@ -1,0 +1,65 @@
+.folders_main-container {
+	height: 90vh;
+	display: flex;
+}
+
+.folder_items-container {
+	max-width: 80vw;
+	margin: auto;
+}
+
+.folder_items {
+	padding: 20px;
+}
+
+.folders_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+	gap: 20px;
+	max-width: 60vw;
+	justify-content: center;
+	margin: auto;
+}
+
+
+/* FOLDER - ITEM */
+.folder_item-container {
+	display: flex;
+	border-radius: 20px;
+	height: 300px;
+	width: 300px;
+	background: var(--black-light);
+	justify-content: center;
+}
+
+.folder_item-container:hover {
+	cursor: pointer;
+	background: var(--black-light-hover)
+}
+
+.folder_item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.folder-name {
+	display: flex;
+	justify-content: center;
+}
+
+.folder-icon {
+	display: flex;
+	width: 60%;
+	height: 60%;
+	margin: 0 auto;
+}
+
+.folder-icon>svg {
+	width: 100%;
+	height: 100%;
+}
+
+.folder-icon>svg path {
+	fill: var(--purple);
+}
