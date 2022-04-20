@@ -1,0 +1,97 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	background: var(--black-light);
+	font-family: var(--font-family)
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.btn {
+	cursor: pointer;
+	border: 0;
+	outline: none;
+	user-select: none;
+}
+
+.btn-transparent {
+	background: transparent;
+	border: 1px solid var(--black-light);
+}
+
+.widget {
+	background: var(--black);
+	border-radius: var(--border-radius);
+}
+
+.link {
+	transition: all .3s cubic-bezier(0.46, 0, 0, 1);
+}
+
+.link:hover {
+	cursor: pointer;
+	color: var(--orange-hover);
+}
+
+.loader {
+	width: inherit;
+	height: inherit;
+}
+
+
+
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--black-light-hover);
+}
+
+::-webkit-scrollbar {
+	background-color: var(--black);
+}
+
+:root {
+	--border-radius: 20px;
+	--btn-border-radius: 5px;
+
+	--black: #181a1b;
+	--black-light: #1e2122;
+	--black-light-hover: #26292b;
+	--gray-light: #c8c3bc;
+	--gray-dark: #e8e6e366;
+	--text-gray: #e8e6e3b3;
+	--text-gray-hover: #e8e6e3e6;
+	--orange: #cc5200;
+	--orange-hover: #ff751a;
+	--green: #5bc95b;
+	--purple: #686cfe;
+	--purple-hover: #686cfee0;
+	--gray: #A4A4A4;
+	--gray-dark: #6C7077;
+
+	--font-family: 'Noto Sans KR', sans-serif;
+}
