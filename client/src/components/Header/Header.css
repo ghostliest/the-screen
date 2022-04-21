@@ -1,4 +1,12 @@
 .header-wrapper {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header {
 	position: sticky;
 	width: 100%;
 	backdrop-filter: blur(50px);
@@ -7,14 +15,6 @@
 	background: #000000cc;
 	padding: 20px;
 	transition: all .3s;
-}
-
-.header {
-	display: flex;
-	width: 80%;
-	margin: auto;
-	justify-content: space-between;
-	align-items: center;
 }
 
 .header-logo {
@@ -120,7 +120,6 @@
 	padding: 20px 0 10px 0;
 	background: var(--black-light);
 	border-radius: 0 0 10px 10px;
-	/* transition: visibility 0ms, opacity .1s ease-in; */
 }
 
 .user-info_container {

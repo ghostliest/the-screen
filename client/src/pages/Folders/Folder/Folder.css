@@ -1,14 +1,12 @@
 .folders-container {
-	width: 80vw;
-	margin: 1% auto;
+	width: 100%;
 }
 
 .folders-sidebar-container {
-	height: 50vh;
 	width: 15%;
 	padding: 20px;
 	position: fixed;
-	height: 80vh;
+	height: calc(80vh - 45px);
 	top: 50%;
 	left: 10%;
 	transform: translate(-10%, -50%);

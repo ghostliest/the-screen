@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ContentItemsList, Header, Sidebar, PopupTrailer, Promo, HistorySlider } from '../../components'
+import { ContentItemsList, Sidebar, PopupTrailer, HistorySlider, Promo } from '../../components'
 import { getContent } from '../../API/contentApi'
 import { IQuery } from '../../API/types'
 import { useDispatch } from 'react-redux'
@@ -53,7 +53,7 @@ export const Home = () => {
 	}, [query])
 
 	return (
-		<div className='home-container'>
+		<>
 			{
 				isShowTrailer &&
 					<PopupTrailer
@@ -62,19 +62,16 @@ export const Home = () => {
 						setVisiblePopup={setTrailer}
 					/>
 			}
-			<Header />
-			<main className="main-container">
-				<Promo />
-				<div className="main-wrapper" ref={serachContentRef}>
-					<Sidebar setQuery={setQuery} />
-					<ContentItemsList
-						page={query.page!}
-						limit={query.limit!}
-						setQuery={setQuery}
-					/>
-				</div>
-				<HistorySlider visibleCount={3} />
-			</main>
-		</div>
+			<Promo />
+			<div className="home-content-wrapper" ref={serachContentRef}>
+				<Sidebar setQuery={setQuery} />
+				<ContentItemsList
+					page={query.page!}
+					limit={query.limit!}
+					setQuery={setQuery}
+				/>
+			</div>
+			<HistorySlider visibleCount={3} />
+		</>
 	)
 }

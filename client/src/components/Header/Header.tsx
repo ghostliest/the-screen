@@ -25,35 +25,26 @@ export const Header = () => {
 	const headerRef = useRef() as any
 
 	useEffect(() => {
-		console.log('location: ', location)
-	}, [location])
+		const elHeight = headerRef?.current?.getBoundingClientRect().height
+		const elPadding = +window.getComputedStyle(headerRef?.current).padding.split('p')[0]
+		setHeaderHeight(elHeight)
+		console.log({ elHeight, elPadding })
 
-	const onScroll = (elHeight: number, elPadding: number) => {
-		if (headerRef?.current) {
-			const scrollPos = window.scrollY
-			if (scrollPos > elHeight) {
+		const onScroll = () => {
+			if (window.scrollY > elHeight) {
 				headerRef.current.style.padding = '10px'
 				setHeight(elHeight - elPadding)
-			} else {
+			} else if (window.scrollY < elHeight / 2) {
 				headerRef.current.style.padding = `${elPadding}px`
 				setHeight(elHeight)
 			}
 		}
-	}
 
-	useEffect(() => {
-		const elHeight = headerRef?.current?.getBoundingClientRect().height
-		const elPadding = +window.getComputedStyle(headerRef?.current).padding.split('p')[0]
-		onScroll(elHeight, elPadding)
+		window.addEventListener('scroll', onScroll)
+		return () => {
+			window.removeEventListener('scroll', onScroll)
+		}
 	}, [])
-
-	useEffect(() => {
-		const elHeight = headerRef?.current?.getBoundingClientRect().height
-		const elPadding = +window.getComputedStyle(headerRef?.current).padding.split('p')[0]
-
-		window.addEventListener('scroll', () => onScroll(elHeight, elPadding))
-		return () => window.removeEventListener('scroll', () => onScroll(elHeight, elPadding))
-	}, [onscroll])
 
 	useEffect(() => {
 		if (stateHeight !== height) {
@@ -167,8 +158,8 @@ export const Header = () => {
 	}
 
 	return (
-		<div className="header-wrapper" ref={headerRef}>
-			<header className="header">
+		<header className="header" ref={headerRef}>
+			<div className="header-wrapper">
 				<Logo />
 				<div className='search_input-header'>
 					<SearchInput
@@ -191,7 +182,7 @@ export const Header = () => {
 							</button>
 					}
 				</div>
-			</header>
-		</div>
+			</div>
+		</header>
 	)
 }

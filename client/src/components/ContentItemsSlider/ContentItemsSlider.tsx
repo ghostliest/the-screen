@@ -28,6 +28,8 @@ export const ContentItemsSlider = ({ visibleCount, content, title }: IContentIte
 		} else {
 			setSliderHover(true)
 		}
+
+		return () => setSliderHover(false)
 	}, [inViewport])
 
 	useEffect(() => {

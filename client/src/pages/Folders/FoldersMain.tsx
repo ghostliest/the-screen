@@ -16,22 +16,20 @@ export const FoldersMain = () => {
 	])
 
 	return (
-		<div className="folders_main-container">
-			<div className="widget folder_items-container">
-				<div className='folder_items-wrapper'>
-					<div className='folder_items'>
-						<ul className='folders_list'>
-							{
-								menuItems.map(({ value, type, icon }, idx) => (
-									<li key={idx}>
-										<Link to={type}>
-											<FolderItem name={value} icon={icon} />
-										</Link>
-									</li>
-								))
-							}
-						</ul>
-					</div>
+		<div className="widget folder_items-container">
+			<div className='folder_items-wrapper'>
+				<div className='folder_items'>
+					<ul className='folders_list'>
+						{
+							menuItems.map(({ value, type, icon }, idx) => (
+								<li key={idx}>
+									<Link to={type}>
+										<FolderItem name={value} icon={icon} />
+									</Link>
+								</li>
+							))
+						}
+					</ul>
 				</div>
 			</div>
 		</div>

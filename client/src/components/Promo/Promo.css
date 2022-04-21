@@ -1,5 +1,6 @@
 .main-promo {
 	position: relative;
+	width: 100%;
 	background: #000 !important;
 	overflow: hidden;
 }

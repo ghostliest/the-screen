@@ -95,8 +95,13 @@ export const Promo = () => {
 							<p>{textCrop(content.details.description, descriptionLength)}</p>
 						</div>
 				}
-				<Persons title='Cast' content={content.actors} />
-				<Persons title='Director' content={content.directors} />
+				{
+					isLoading &&
+					<>
+						<Persons title='Cast' content={content.actors} />
+						<Persons title='Director' content={content.directors} />
+					</>
+				}
 			</div>
 			<Link to={`${FILM_ROUTE}/${content.id}`} className='main-promo-link'>
 				{
