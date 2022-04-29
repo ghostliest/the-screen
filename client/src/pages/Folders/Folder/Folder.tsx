@@ -10,6 +10,7 @@ import { ReactComponent as ViewedIcon } from '../viewed.svg'
 import ContentLoader from 'react-content-loader'
 import { useActions, useCheckScrollEnd, useScrollY, useTypeSelector } from '../../../hooks'
 import { FILM_ROUTE, FOLDERS_ROUTE } from '../../../utils/consts'
+import { timeFormat } from '../../../utils'
 import './Folder.css'
 
 const folderContentInitial: IFolderContentFull = {
@@ -238,7 +239,7 @@ const ContentItem = ({ item }: IContentItem) => {
 					<div className="folder-content-title">{isFilm ? title : `${title} (TV series)`}</div>
 					<div className="folder-content-subtitle">
 						<div className="content-subtitle-year">{completionYear ? `(${year} - ${completionYear})` : `(${year})`}</div>
-						<div className="content-subtitle-time">{isFilm ? `${Math.floor(details.duration / 60)}h ${details.duration % 60}m` : `${details.duration}m`}</div>
+						<div className="content-subtitle-time">{timeFormat(details.duration, isFilm)}</div>
 					</div>
 				</div>
 				<div className="folder-content-meta-container">
