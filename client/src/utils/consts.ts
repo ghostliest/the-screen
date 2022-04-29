@@ -11,6 +11,3 @@ export const SEARCH_ROUTE = '/search'
 export const ADMIN_ROUTE = '/admin'
 
 export const FOLDERS_ROUTE = '/folders'
-export const FOLDERS_WATCHLATER_ROUTE = `${FOLDERS_ROUTE}?type=watchLater`
-export const FOLDERS_FAVORITE_ROUTE = `${FOLDERS_ROUTE}?type=favorite`
-export const FOLDERS_VIEWED_ROUTE = `${FOLDERS_ROUTE}?type=viewed`
