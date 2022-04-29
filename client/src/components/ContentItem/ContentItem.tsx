@@ -17,8 +17,15 @@ export const ContentItem = ({ content: { id, img, title, year, completionYear, i
 
 	return (
 		<div className='item_wrapper'>
-			{ !imgDownloaded && <ImgSkeleton width={140} height={210} />}
-			{ details?.youtubeTrailerKey && <WatchTrailerBtn ytKey={details.youtubeTrailerKey} /> }
+			{
+				!imgDownloaded &&
+				<div className="content-item_poster-wrapper">
+					<div className='content-item-skeleton'>
+						<ImgSkeleton />
+					</div>
+				</div>
+			}
+			{ details?.youtubeTrailerKey && imgDownloaded && <WatchTrailerBtn ytKey={details.youtubeTrailerKey} /> }
 			<Link to={`${FILM_ROUTE}/${id}`} className='item' style={{ opacity: imgDownloaded ? '1' : '0' }}>
 				<div className="poster-wrapper">
 					<div className="poster-link">

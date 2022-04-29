@@ -1,6 +1,11 @@
 .content-item-skeleton {
+	height: 210px;
+	width: 140px;
+	position: relative;
+}
+
+.content-item_poster-wrapper {
 	position: absolute;
-	z-index: 2;
 }
 
 
