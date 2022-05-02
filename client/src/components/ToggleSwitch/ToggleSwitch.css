@@ -1,6 +1,7 @@
 .toggle_switch-container {
 	display: flex;
 	width: 100%;
+	overflow: hidden;
 }
 
 .toggle_switch-wrapper {
