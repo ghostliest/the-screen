@@ -109,7 +109,7 @@ export const SearchInput = ({ searchType, placeholder, autoFocus = true, redirec
 							<div className="suggest-search">
 								{
 									spinner
-										?	<Spinner fullScreen={false} style={{ margin: '15px' }} />
+										?	<Spinner style={{ margin: '15px' }} />
 										: <SearchResultMenu
 											cursorPos={cursorPos}
 											result={result}
@@ -129,13 +129,16 @@ export const SearchInput = ({ searchType, placeholder, autoFocus = true, redirec
 	)
 }
 
-const SearchResultMenu = ({ redirect = true, handleClickMenuItem, handleSuggestItemClick, result, resultError, cursorPos }: ISearchResultMenu) => {
+const SearchResultMenu = ({ redirect = true, handleClickMenuItem, handleSuggestItemClick = () => {}, result, resultError, cursorPos }: ISearchResultMenu) => {
 	const MenuLi = ({ item }: any) => {
 		const ROUTE = item.name ? PERSON_ROUTE : FILM_ROUTE
 		return (
 			<Link
 				to={redirect ? `${ROUTE}/${item.id}` : ''}
-				onClick={() => handleClickMenuItem()}
+				onClick={() => {
+					handleClickMenuItem()
+					handleSuggestItemClick(item.id)
+				}}
 			>
 				<div className="search-item-container">
 					<div className="search-item-img">

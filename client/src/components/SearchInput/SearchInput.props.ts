@@ -12,7 +12,7 @@ export interface ISearchInput {
 export interface ISearchResultMenu {
 	redirect?: boolean,
 	handleClickMenuItem: () => void
-	handleSuggestItemClick?: (type: any, id: any) => void,
+	handleSuggestItemClick?: (id: number, type?: any) => void,
 	result: ISearchRes | any,
 	resultError: string,
 	cursorPos: number
