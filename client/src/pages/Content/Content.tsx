@@ -3,12 +3,11 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { getFullContent } from '../../API/contentApi'
 import { addToFolder, CheckInFolder, checkRate } from '../../API/userApi'
 import { useTypeSelector } from '../../hooks'
-import { Rating, ButtonIconText, PopupTrailer, HistorySlider } from '../../components'
+import { Rating, ButtonIconText, PopupTrailer, HistorySlider, ImgSkeleton } from '../../components'
 import { LOGIN_ROUTE, PERSON_ROUTE } from '../../utils/consts'
 import { LocalStorageHistory, timeFormat } from '../../utils'
 import { ReactComponent as PlayIcon } from './play.svg'
 import { ReactComponent as DoneIcon } from '../../assets/done.svg'
-import { ImgSkeleton } from '../../components/Skeleton/ImgSkeleton'
 import { IFullContent } from '../../store/types/contentTypes'
 import { fullContentInitial } from '../../store/reducers/contentReducer'
 import './Content.css'
@@ -168,9 +167,10 @@ export const Content = () => {
 					<h2>About content</h2>
 					<div className="info-table">
 						{
-							detailInfo.map(({ key, value, redirect }: any, idx: any) => {
-								return (
-									<div key={idx} className="info-row">
+							detailInfo.map(({ key, value, redirect }: { key: string, value: number | string | any[] | null, redirect: string}, idx) => (
+								(typeof value === 'object' && value?.length === 0) || !value
+									? <Fragment key={idx}></Fragment>
+									:	<div key={idx} className="info-row">
 										<div className="info-row-title">{key}</div>
 										<div className="info-row-value">
 											{
@@ -189,8 +189,7 @@ export const Content = () => {
 											}
 										</div>
 									</div>
-								)
-							})
+							))
 						}
 					</div>
 				</div>
