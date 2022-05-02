@@ -6,7 +6,7 @@ import styles from './Spinner.module.css'
 
 export const Spinner = ({ fullScreen = false, className, style }: ISpinner) => {
 	return (
-		<div className={className} style={style}>
+		<div className={cn(styles.spinnerWrapper, className)} style={style}>
 			<div className={cn(styles.spinnerContainer, { [styles.spinnerFullscreen]: fullScreen })}>
 				<div className={cn(styles.spinner)}>
 					<SpinnerIcon />

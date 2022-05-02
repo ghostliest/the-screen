@@ -1,7 +1,14 @@
+.spinnerWrapper {
+	height: 100%;
+	width: initial;
+}
+
 .spinnerContainer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 100%;
+	width: 100%;
 }
 
 .spinnerFullscreen {
