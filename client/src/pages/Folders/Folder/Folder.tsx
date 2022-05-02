@@ -167,10 +167,10 @@ export const Folder = () => {
 					<HistorySlider visibleCount={1} />
 				</div>
 			</div>
-			<div className="widget folders-content">
+			<div className="widget folders-content" style={{ height: isLoading ? '70vh' : 'fit-content' }}>
 				{
 					isLoading
-						? <Spinner fullScreen={true} />
+						? <Spinner />
 						: <>
 							<div className="folders-content-header">
 								<h1>

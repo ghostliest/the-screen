@@ -97,7 +97,7 @@ export const Multiselect = ({ placeholder, searchType, menuValues, setMenuValues
 			<div className="select_menu" ref={selectMenuRef}>
 				{
 					isLoading
-						? <Spinner className='search_state' fullScreen={false} />
+						? <Spinner className='search_state' />
 						: searchValues.length > 0
 							? searchValues.map(({ id, value }: any) => (
 								<div key={id} className="select_menu-item" onClick={() => handleMenuItemClick(id, value)}>{value}</div>
