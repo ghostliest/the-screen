@@ -51,6 +51,7 @@ export const Folder = () => {
 	const [LIMIT] = useState(5)
 	const [isBack, setIsBack] = useState(false)
 	const [isLoading, setLoading] = useState(true)
+	const [errorMessage, setErrorMessage] = useState('')
 
 	const navigate = useNavigate()
 	const { pathname } = useLocation()
@@ -96,10 +97,12 @@ export const Folder = () => {
 
 	useEffect(() => {
 		if (!currentFolderType || isBack) return
+		setErrorMessage('')
 		setLoading(true)
 		getFolderContent(currentFolderType || 'watchLater', 1, LIMIT)
 			.then(res => {
-				setContents(res)
+				if (res.message) setErrorMessage(res.message)
+				else setContents(res)
 			})
 			.finally(() => setLoading(false))
 	}, [currentFolderType])
@@ -179,9 +182,9 @@ export const Folder = () => {
 								</h1>
 							</div>
 							{
-								contents.rows.length <= 0
+								errorMessage
 									? <div className='folder-empty'>
-										<h2>{"There's nothing here"}</h2>
+										<h2>{errorMessage}</h2>
 									</div>
 									: <ul className='folders-content-col'>
 										{
