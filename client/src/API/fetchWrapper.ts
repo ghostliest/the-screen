@@ -11,7 +11,8 @@ export const fetchWrapper = async ({ url, method = 'GET', needToken, body }: IFe
 	const setHeaders = () => {
 		const headers = {} as any
 		if (body instanceof FormData) {
-			headers['Content-Type'] = 'multipart/form-data'
+			// headers['Content-Type'] = 'multipart/form-data'
+			// headers['content-type'] = 'multipart/form-data'
 		} else {
 			headers['Content-Type'] = 'application/json'
 		}

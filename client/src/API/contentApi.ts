@@ -38,7 +38,7 @@ export const search = async (type: TypeSearchMini, search: string, limit: number
 	})
 }
 
-export const create = async (formData: any) => {
+export const create = async (formData: FormData) => {
 	return await fetchWrapper({
 		url: `${process.env.REACT_APP_API_URL}/api/film/create`,
 		method: 'POST',
@@ -47,7 +47,7 @@ export const create = async (formData: any) => {
 	})
 }
 
-export const update = async (formData: any, filmId: number) => {
+export const update = async (formData: FormData, filmId: number) => {
 	return await fetchWrapper({
 		url: `${process.env.REACT_APP_API_URL}/api/film/${filmId}`,
 		method: 'PUT',

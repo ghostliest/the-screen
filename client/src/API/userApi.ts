@@ -1,5 +1,5 @@
 import { fetchWrapper } from './fetchWrapper'
-import { IFolderContentFull } from '../../../types/folder.types'
+import { IFolderContentFullResponse } from '../../../types/folder.types'
 import { folderType, ILogin, IRegistration } from './types'
 
 export const login = async (body: { email?: string, password?: string }): Promise<ILogin> => {
@@ -26,7 +26,7 @@ export const checkAuth = async () => {
 	})
 }
 
-export const getFolderContent = async (folder: folderType, page: number = 1, limit: number = 5, count?: number): Promise<IFolderContentFull> => {
+export const getFolderContent = async (folder: folderType, page: number = 1, limit: number = 5, count?: number): Promise<IFolderContentFullResponse> => {
 	return fetchWrapper({
 		url: `${process.env.REACT_APP_API_URL}/api/user/folder/${folder}?page=${page}&limit=${limit}&count=${count}`,
 		method: 'GET',
