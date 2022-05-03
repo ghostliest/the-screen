@@ -2,7 +2,6 @@
 	color: rgb(232, 230, 227);
 	background: var(--black-light);
 	transition: all .2s ease-in-out;
-	overflow: hidden;
 }
 
 .select_dropdown_container:hover {
