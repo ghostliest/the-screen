@@ -23,7 +23,7 @@
 }
 
 .item_wrapper:hover .title {
-	color: rgb(255, 117, 26);
+	color: var(--orange-hover);
 }
 
 
