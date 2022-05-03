@@ -1,0 +1,148 @@
+.multi_select-container {
+	width: 100%;
+	position: relative;
+	user-select: none;
+}
+
+.multi_select-control {
+	display: flex;
+	justify-content: space-between;
+	background: #2c2c2c;
+	color: #fff;
+	padding: 8px 16px;
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+.select_value-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.select_input-container {
+	width: 20%;
+}
+
+.select_input {
+	border: 0px;
+	outline: 0px;
+	padding: 0px;
+	height: 100%;
+	font-size: 18px;
+	background: transparent;
+	color: #fff;
+}
+
+.select_indicators-container {
+	display: flex;
+	align-items: center;
+	fill: #fff;
+	cursor: pointer;
+}
+
+.separator {
+	background-color: #fff;
+	width: 1px;
+	box-sizing: border-box;
+	align-self: center;
+}
+
+/* .select_clear-indicator {} */
+
+.select-separator {
+	height: 20px;
+}
+
+
+
+.multi_value {
+	display: flex;
+	align-items: center;
+	border-radius: 2px;
+	padding: 4px;
+	line-height: 0;
+	background: #1c1c1c;
+	color: #fff;
+	fill: #fff;
+}
+
+/* .multi_value-label {} */
+
+.multi_value-separator {
+	height: 12px;
+	margin: 3px 1px 3px 6px;
+	background: #ababab;
+}
+
+.multi_value-btn {
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+	width: 50%;
+	height: 50%;
+}
+
+/* .multi_value-remove {} */
+
+.multi_value-remove:hover {
+	fill: red;
+}
+
+.multi_value-replace {
+	padding: 1.5px;
+}
+
+.multi_value-replace:hover {
+	fill: #1ae200;
+}
+
+/* .select_dropdown-indicator {} */
+
+
+
+
+
+.select_menu {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	background: var(--black-light);
+	border-radius: 5px;
+	padding: 5px 0;
+}
+
+.select_menu-item {
+	cursor: pointer;
+	padding: 5px;
+}
+
+.select_menu-item:hover {
+	background: var(--black-light-hover);
+}
+
+.search_menu-notfound-container {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_menu-header {
+	margin: 10px;
+	text-align: center;
+}
+
+.select_menu-create_btn {
+	height: 30px !important;
+	display: flex;
+	gap: 8px;
+	background: var(--purple);
+	padding: 5px 8px !important;
+	align-items: center;
+}
+
+.btn_create-separator {
+	height: 40px;
+	background: var(--black-light);
+	height: 30px;
+}

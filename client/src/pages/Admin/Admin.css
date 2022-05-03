@@ -1,0 +1,37 @@
+.admin {
+	position: relative;
+	width: inherit;
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+}
+
+.admin-btns-actions_wrapper {
+	display: grid;
+	width: 100%;
+	align-self: center;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100px 100px;
+}
+
+.like-storybook_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	background: #0e0e0e;
+	width: 100%;
+	align-self: center;
+	padding: 30px;
+	border-radius: var(--border-radius);
+}
+
+.like-storybook_wrapper > h1 {
+	text-align: center;
+}
+
+.like-storybook_container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

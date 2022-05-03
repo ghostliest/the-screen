@@ -1,0 +1,71 @@
+.main-promo {
+	position: relative;
+	width: 100%;
+	background: #000 !important;
+	overflow: hidden;
+}
+
+.main-promo-link {
+	display: flex;
+	flex-direction: row;
+	padding: 0px 0 0px 0px;
+	width: 100%;
+	height: 100%;
+	align-items: end;
+	justify-content: end;
+}
+
+.yt-promo-iframe-container {
+	overflow: hidden;
+	align-self: center;
+	width: 50%;
+	transform: scale(1.5);
+	margin-right: 10%;
+	aspect-ratio: 16/9;
+	pointer-events: none;
+	user-select: none;
+}
+
+.yt-promo-iframe-container>iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.promo-loader-wrapper {
+	width: 100%;
+	height: 320px;
+}
+
+
+.promo-content-container {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+	left: 60px;
+	gap: 5px;
+	color: #fff;
+	width: 30%;
+	height: 100%;
+	z-index: 5;
+}
+
+.promo-title {
+	color: var(--gray-dark);
+}
+
+.promo-row {
+	display: flex;
+	flex-direction: row;
+	color: var(--gray-light);
+}
+
+.promo-gradient {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 55%;
+	height: 100%;
+	background-image: linear-gradient(90deg, #0c0c0c 65%, hsla(0, 0%, 5%, .5), rgba(31, 31, 31, 0));
+}

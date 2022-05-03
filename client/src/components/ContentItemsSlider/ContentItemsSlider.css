@@ -1,0 +1,53 @@
+.carousel-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 50px;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.carousel-not-widget {
+	padding: 0 !important;
+}
+
+.scrollBar-container {
+	margin: auto;
+}
+
+.carousel-title {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.scrollBar-wrapper {
+	overflow: hidden;
+	width: 100%;
+}
+
+
+.carousel-wrapper {
+	position: relative;
+	align-self: center;
+}
+
+.carousel_items-container {
+	display: inline-flex;
+	gap: 30px;
+	justify-content: center;
+	transition: all 0.6s ease-in-out;
+}
+
+.carousel_button {
+	position: absolute;
+	top: 100px;
+	cursor: pointer;
+}
+
+.toLeftButton {
+	left: -20px;
+}
+
+.toRightButton {
+	right: -20px;
+}

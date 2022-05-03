@@ -1,0 +1,31 @@
+.modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	backdrop-filter: blur(50px);
+	background: #000000cc;
+	z-index: 9999;
+}
+
+.modal-wrapper {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-main-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	height: 90%;
+	padding: 30px;
+	background: var(--black);
+	border-radius: var(--border-radius);
+	overflow-y: auto;
+}
+

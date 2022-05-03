@@ -1,0 +1,16 @@
+.pagination-container {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.btn-pagination {
+	height: 40px;
+	width: 40px;
+	line-height: 1;
+	padding: 0;
+}
+
+.btn-pagination-active {
+	border: 2px solid #ffffff !important;
+}

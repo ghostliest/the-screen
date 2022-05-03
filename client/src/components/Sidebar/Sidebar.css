@@ -1,0 +1,12 @@
+.sidebar-container {
+	width: 25%;
+}
+
+.sidebar-wrapper {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 20px;
+	gap: 20px;
+	height: 100%;
+	padding: 30px;
+}

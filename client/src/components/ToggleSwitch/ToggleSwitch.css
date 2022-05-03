@@ -1,0 +1,46 @@
+.toggle_switch-container {
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+}
+
+.toggle_switch-wrapper {
+	width: 100%;
+	background: #000;
+	user-select: none;
+	border-radius: var(--btn-border-radius);
+}
+
+.toggle_switch-content {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	align-items: center;
+	text-align: center;
+}
+
+.toggle_switch-item {
+	width: 50%;
+	padding: 8px 0;
+	opacity: 0.6;
+	transition: all .2s ease-in-out;
+}
+
+.toggle_switch-item-select {
+	opacity: 1;
+	z-index: 1;
+}
+
+.toggle_switch-item-not-select {
+	cursor: pointer;
+}
+
+.toggle_switch-btn {
+	position: relative;
+	height: 100%;
+	top: -100%;
+	background: var(--black-light);
+	transition: all .2s ease-in-out;
+	border-radius: var(--btn-border-radius);
+}
