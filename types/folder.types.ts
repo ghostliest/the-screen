@@ -29,3 +29,7 @@ export interface IFolderContentFull {
 	count: number,
 	rows: IFolderContent[]
 }
+
+export interface IFolderContentFullResponse extends IFolderContentFull {
+	message: string
+}
