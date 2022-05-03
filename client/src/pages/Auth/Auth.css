@@ -1,0 +1,140 @@
+.passport-wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 380px;
+	position: relative;
+	background: var(--black);
+	border-radius: 16px;
+	padding: 50px 30px;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+}
+
+.btn-arrow-goback {
+	position: absolute;
+	top: 25px;
+	left: -20px;
+}
+
+.passport-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.passport-h1 {
+	font-weight: 100;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.passport-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.passport-form-input {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0 20px 0;
+}
+
+.auth-input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid transparent;
+	color: #fff;
+	border-radius: 5px;
+	outline: none;
+	font-size: 25px;
+	transition: all .2s linear;
+	background: var(--black-light);
+}
+
+.auth-input:focus {
+	border-color: var(--purple);
+}
+
+
+.auth-input-message {
+	color: red;
+	margin-top: 5px;
+	text-align: center;
+	height: 18px;
+}
+
+
+.passport-form-btns {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+
+
+.passport-route-wrapper {
+	overflow-x: clip;
+}
+
+.passport-route {
+	display: flex;
+	transition: all .5s;
+}
+
+.passport-route>div {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	border-radius: 10px;
+	transform-origin: center center;
+	transform: scale(1);
+	transition: transform 0.5s;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all .5s;
+}
+
+.passport-route-enter {
+	width: 100%;
+}
+
+.passport-route-enter-wrapper {
+	width: 100%;
+}
+
+.passport-route-enter-done {
+	width: 100%;
+}
+
+.password_form-current_account {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--black-light-hover);
+	border-radius: 8px;
+	padding: 8px 12px;
+}
+
+.account-avatar_container {
+	width: 36px;
+	height: 36px;
+}
+
+.account-avatar_container>img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.account-name {
+	max-width: 170px;
+	font-size: 14px;
+	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
