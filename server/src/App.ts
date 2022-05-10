@@ -6,7 +6,7 @@ import path from 'path'
 import sequelize from './db'
 import router from './routes/index'
 import errorHandler from './middleware/errorHandling.middleware'
-import { ILogger } from './interfaces/logger.interface'
+import { ILogger } from './interfaces/logger/logger.interface'
 
 export default class App {
 	private app: Express
