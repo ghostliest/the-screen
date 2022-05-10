@@ -1,4 +1,5 @@
-import { IFilmsAndCount } from '../../../../server/interfaces/services/IFilmService'
+import { IFilmsAndCount } from '../reducers/contentReducer'
+
 /* eslint-disable no-unused-vars */
 export interface IInitialContentState {
 	isLoading: boolean,
@@ -65,10 +66,6 @@ export enum ContentActionTypesEnum {
 	SET_CONTENT_LIST = 'SET_CONTENT_LIST',
 	SET_SHOW_TRAILER = 'SET_SHOW_TRAILER'
 }
-
-// export interface typeItem {
-// 	id: number | null, name: string
-// }
 
 export interface TrailerAction {
 	type: ContentActionTypesEnum.SET_SHOW_TRAILER,
