@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize'
 
 export default new Sequelize(
 	process.env.DB_NAME as string,
@@ -9,4 +9,4 @@ export default new Sequelize(
 		host: process.env.DB_HOST,
 		port: parseInt(process.env.DB_PORT as string)
 	}
-);
+)
