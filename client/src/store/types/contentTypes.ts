@@ -1,6 +1,20 @@
-import { IFilmsAndCount } from '../reducers/contentReducer'
-
 /* eslint-disable no-unused-vars */
+
+export interface IFilmsAndCount {
+	count: number,
+	rows: [{
+		id: number,
+		title: string,
+		year: number,
+		img: string,
+		isFilm: boolean,
+		completionYear: number | null,
+		ratingsCount: number,
+		starsCount: number,
+		youtubeTrailerKey: string
+	}]
+}
+
 export interface IInitialContentState {
 	isLoading: boolean,
 	trailer: ITrailer,
