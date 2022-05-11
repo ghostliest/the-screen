@@ -7,7 +7,7 @@ import {
 	LOGIN_ROUTE
 } from '../../utils/consts'
 import { SearchInput, ButtonIconText } from '..'
-import { ReactComponent as FolderIcon } from './folder.svg'
+import { ReactComponent as FolderIcon } from '../../assets/folder.svg'
 import './Header.css'
 
 export const Header = () => {

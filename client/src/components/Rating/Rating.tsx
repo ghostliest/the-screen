@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useOnClickOutside } from '../../hooks'
-import { ReactComponent as StarIcon } from './star.svg'
+import { ReactComponent as StarIcon } from '../../assets/star.svg'
 import { LOGIN_ROUTE } from '../../utils/consts'
 import { addUserRate } from '../../API/userApi'
 import { IRating } from './Rating.props'

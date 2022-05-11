@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { folderType } from '../../API/types'
-import { ReactComponent as WatchLaterIcon } from './watchLater.svg'
-import { ReactComponent as HeartIcon } from './heart.svg'
-import { ReactComponent as ViewedIcon } from './viewed.svg'
-import { ReactComponent as PlusIcon } from './plus.svg'
+import { ReactComponent as WatchLaterIcon } from '../../assets/watchLater.svg'
+import { ReactComponent as HeartIcon } from '../../assets/heart.svg'
+import { ReactComponent as ViewedIcon } from '../../assets/viewed.svg'
+import { ReactComponent as PlusIcon } from '../../assets/plus.svg'
 import './FoldersMain.css'
 
 export const FoldersMain = () => {

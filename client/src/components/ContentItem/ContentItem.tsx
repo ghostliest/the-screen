@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FILM_ROUTE } from '../../utils/consts'
-import { ReactComponent as PlayIcon } from '../../pages/Content/play.svg'
+import { ReactComponent as PlayIcon } from '../../assets/play.svg'
 import { useActions } from '../../hooks'
 import { ImgSkeleton } from '../Skeleton/ImgSkeleton'
 import { IContentItemProps } from './ContentItem.props'

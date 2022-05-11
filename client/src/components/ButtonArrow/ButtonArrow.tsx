@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as ArrowIcon } from './arrow.svg'
+import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg'
 import { ButtonArrowProps } from './ButtonArrow.props'
 import cn from 'classnames'
 import styles from './ButtonArrow.module.css'
