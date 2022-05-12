@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { useTypeSelector } from '../hooks'
-import { Error404 } from '../pages'
-import { publicRoutes, privateRoutes, adminRoutes } from '../routes'
-import { Layout } from './Layout/Layout'
+import { useTypeSelector } from 'hooks'
+import { Error404 } from 'pages'
+import { publicRoutes, privateRoutes, adminRoutes } from 'routes'
+import { Layout } from 'components'
 
 const AppRouter = () => {
 	const { isAdmin, isAuth } = useTypeSelector(state => state.user)

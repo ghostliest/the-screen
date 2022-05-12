@@ -1,5 +1,5 @@
-import { TypeSearchFull } from '../../API/types'
-import { ISearchRes } from '../../store/types/contentTypes'
+import { TypeSearchFull } from 'API/types'
+import { ISearchRes } from 'store/types/contentTypes'
 
 export interface ISearchInput {
 	searchType: TypeSearchFull,

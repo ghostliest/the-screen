@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import { Popup } from '../Popup/Popup'
-import { useOnClickOutside } from '../../hooks'
+import { Popup } from 'components'
+import { useOnClickOutside } from 'hooks'
 import { IPopupTrailer } from './PopupTrailer.props'
 import './PopupTrailer.css'
 

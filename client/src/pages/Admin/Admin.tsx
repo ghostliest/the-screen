@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
-import { ButtonText, ButtonArrow, ButtonIconText, ModalContentOperations, ToggleSwitch, HistorySlider, Spinner } from '../../components'
+import {
+	ButtonText,
+	ButtonArrow,
+	ButtonIconText,
+	ModalContentOperations,
+	ToggleSwitch,
+	HistorySlider,
+	Spinner
+} from 'components'
 import './Admin.css'
 
 export const Admin = () => {

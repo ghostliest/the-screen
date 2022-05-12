@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { ButtonText, ToggleSwitch, SelectDropdown } from '..'
-import { getMeta } from '../../API/contentApi'
-import { randomInRange } from '../../utils/randomInRange'
+import { ButtonText, ToggleSwitch, SelectDropdown } from 'components'
+import { randomInRange } from 'utils/randomInRange'
+import { getMeta } from 'API/contentApi'
+import { TypeSort, TypeContentType } from 'API/types'
 import { ISidebar } from './Sidebar.props'
-import { TypeSort, TypeContentType } from '../../API/types'
 import './Sidebar.css'
 
 interface IInitialState {

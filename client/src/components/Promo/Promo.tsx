@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
 import ContentLoader from 'react-content-loader'
 import { Link } from 'react-router-dom'
-import { getFullContent } from '../../API/contentApi'
-import { FILM_ROUTE, PERSON_ROUTE } from '../../utils/consts'
-import { textCrop } from '../../utils'
+import { getFullContent } from 'API/contentApi'
+import { FILM_ROUTE, PERSON_ROUTE } from 'utils/consts'
+import { textCrop } from 'utils'
 import './Promo.css'
 
 export const Promo = () => {

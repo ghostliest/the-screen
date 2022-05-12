@@ -1,5 +1,5 @@
 import React from 'react'
-import { Admin, Auth, Content, Person, Home, FoldersMain, Folder } from './pages'
+import { Admin, Auth, Content, Person, Home, FoldersMain, Folder } from 'pages'
 import {
 	ADMIN_ROUTE,
 	HOME_ROUTE,
@@ -8,7 +8,7 @@ import {
 	REGISTRATION_ROUTE,
 	PERSON_ROUTE,
 	FOLDERS_ROUTE
-} from './utils/consts'
+} from 'utils/consts'
 
 interface Routes {
 	path: string;

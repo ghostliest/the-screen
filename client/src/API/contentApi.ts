@@ -1,5 +1,5 @@
 import { fetchWrapper } from './fetchWrapper'
-import { IFullContent, ISearchRes } from '../store/types/contentTypes'
+import { IFullContent, ISearchRes } from 'store/types/contentTypes'
 import { IQuery, TypeGetMeta, TypeSearchFull, TypeSearchMini } from './types'
 
 export const getFullContent = async (id: string): Promise<IFullContent> => {

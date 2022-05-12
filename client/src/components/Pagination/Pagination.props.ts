@@ -1,5 +1,5 @@
 import React from 'react'
-import { IQuery } from '../../API/types'
+import { IQuery } from 'API/types'
 
 export interface IPagination {
 	page: number,

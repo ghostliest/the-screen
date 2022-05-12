@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ContentItemsList, Sidebar, PopupTrailer, HistorySlider, Promo } from '../../components'
-import { getContent } from '../../API/contentApi'
-import { IQuery } from '../../API/types'
 import { useDispatch } from 'react-redux'
-import { setLoading } from '../../store/action-creators/userActions'
-import { useTypeSelector, useActions } from '../../hooks'
+import { ContentItemsList, Sidebar, PopupTrailer, HistorySlider, Promo } from 'components'
+import { getContent } from 'API/contentApi'
+import { IQuery } from 'API/types'
+import { setLoading } from 'store/action-creators/userActions'
+import { useTypeSelector, useActions } from 'hooks'
 import './Home.css'
 
 export const Home = () => {

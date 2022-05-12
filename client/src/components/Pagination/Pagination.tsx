@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ButtonText } from '../ButtonText/ButtonText'
+import { ButtonText } from 'components'
 import { IPagination } from './Pagination.props'
 import './Pagination.css'
 

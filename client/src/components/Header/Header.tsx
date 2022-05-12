@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { useTypeSelector, useActions } from '../../hooks'
+import { useTypeSelector, useActions } from 'hooks'
+import { SearchInput, ButtonIconText } from 'components'
+import { ReactComponent as FolderIcon } from 'assets/folder.svg'
 import {
 	FOLDERS_ROUTE,
 	HOME_ROUTE,
 	LOGIN_ROUTE
-} from '../../utils/consts'
-import { SearchInput, ButtonIconText } from '..'
-import { ReactComponent as FolderIcon } from '../../assets/folder.svg'
+} from 'utils/consts'
 import './Header.css'
 
 export const Header = () => {
