@@ -3,15 +3,17 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useTypeSelector, useActions } from 'hooks'
 import { SearchInput, ButtonIconText } from 'components'
 import { ReactComponent as FolderIcon } from 'assets/folder.svg'
+import { ReactComponent as SigninIcon } from 'assets/signin.svg'
 import {
 	FOLDERS_ROUTE,
 	HOME_ROUTE,
-	LOGIN_ROUTE
+	LOGIN_ROUTE,
+	ADMIN_ROUTE
 } from 'utils/consts'
 import './Header.css'
 
 export const Header = () => {
-	const { isAuth, user } = useTypeSelector(state => state.user)
+	const { isAuth, isAdmin, user } = useTypeSelector(state => state.user)
 	const { height: stateHeight } = useTypeSelector(state => state.componentsInfo.header)
 
 	const navigate = useNavigate()
@@ -62,12 +64,6 @@ export const Header = () => {
 		}
 	}
 
-	const handleFoldersClick = () => {
-		return isAuth
-			? navigate(`${FOLDERS_ROUTE}`)
-			: navigate(`${LOGIN_ROUTE}?next=${FOLDERS_ROUTE}`)
-	}
-
 	const handleSuggestItemClick = (type: any, id: any) => {
 		console.warn('handleSuggestItemClick: ', `type: ${type} - id: ${id}`)
 	}
@@ -76,18 +72,46 @@ export const Header = () => {
 		navigate(`${LOGIN_ROUTE}?next=${location.pathname}`)
 	}
 
-	const handleFromHomeLogoClick = () => {
+	const handleScrollTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
 	const FolderBtn = () => {
+		const handleFoldersClick = () => {
+			if (isAuth) {
+				if (location.pathname === FOLDERS_ROUTE) handleScrollTop()
+				else navigate(`${FOLDERS_ROUTE}`)
+			} else {
+				navigate(`${LOGIN_ROUTE}?next=${FOLDERS_ROUTE}`)
+			}
+		}
+
 		return (
 			<div className="btn-folder">
 				<ButtonIconText
-					onClick={() => handleFoldersClick()}
+					onClick={handleFoldersClick}
 					text='Folders'
 					transparent={true}>
 					{<FolderIcon />}
+				</ButtonIconText>
+			</div>
+		)
+	}
+
+	const AdminBtn = () => {
+		const handleAdminClick = () => {
+			location.pathname === ADMIN_ROUTE
+				? handleScrollTop()
+				: navigate(`${ADMIN_ROUTE}`)
+		}
+
+		return (
+			<div className="btn-folder">
+				<ButtonIconText
+					onClick={handleAdminClick}
+					text='Admin'
+					transparent={true}>
+					{<SigninIcon />}
 				</ButtonIconText>
 			</div>
 		)
@@ -143,7 +167,7 @@ export const Header = () => {
 							location.pathname === '/'
 								? <span
 									className='header-logo-first link'
-									onClick={() => handleFromHomeLogoClick()}>
+									onClick={handleScrollTop}>
 									{'The screen'}
 								</span>
 								: <div className="header-logo-wrapper">
@@ -171,13 +195,14 @@ export const Header = () => {
 				</div>
 
 				<div className="user-container">
-					{ location.pathname !== FOLDERS_ROUTE && <FolderBtn /> }
+					<FolderBtn />
+					{ isAdmin && <AdminBtn /> }
 					{
 						isAuth
 							? <UserDropdown />
 							:	<button
 								className="btn btn-login"
-								onClick={() => hangleLoginClick()}>
+								onClick={hangleLoginClick}>
 								{'Login'}
 							</button>
 					}
