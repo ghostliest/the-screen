@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useOnClickEsc, useOnClickOutside } from '../../hooks'
+import { useOnClickEsc, useOnClickOutside } from 'hooks'
 import { IPopup } from './Popup.props'
 import './Popup.css'
 

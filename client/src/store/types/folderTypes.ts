@@ -1,4 +1,4 @@
-import { folderType } from '../../API/types'
+import { folderType } from 'API/types'
 
 export enum FolderActionTypesEnum {
 	// eslint-disable-next-line no-unused-vars

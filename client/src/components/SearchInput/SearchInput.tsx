@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { searchContent } from '../../API/contentApi'
-import { FILM_ROUTE, PERSON_ROUTE } from '../../utils/consts'
-import { Spinner } from '..'
-import { ReactComponent as SearchIcon } from './Search.svg'
-import { ISearchRes } from '../../store/types/contentTypes'
+import { searchContent } from 'API/contentApi'
+import { FILM_ROUTE, PERSON_ROUTE } from 'utils/consts'
+import { Spinner } from 'components'
+import { useOnClickOutside, useOnClickEsc } from 'hooks'
+import { ReactComponent as SearchIcon } from 'assets/search.svg'
+import { ISearchRes } from 'store/types/contentTypes'
 import { ISearchInput, ISearchResultMenu } from './SearchInput.props'
-import { useOnClickOutside, useOnClickEsc } from '../../hooks'
 import './SearchInput.css'
 
 const searchInitialState = { films: [], persons: [], message: '' }

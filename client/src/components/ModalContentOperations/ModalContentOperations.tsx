@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, Multiselect, SearchInput, Spinner, ToggleSwitch } from '..'
-import { getFullContent, create, update } from '../../API/contentApi'
-import { IFullContent, IMetaItem } from '../../store/types/contentTypes'
+import { Modal, Multiselect, SearchInput, Spinner, ToggleSwitch } from 'components'
+import { getFullContent, create, update } from 'API/contentApi'
+import { IFullContent, IMetaItem } from 'store/types/contentTypes'
 import { IContentInfo, ICustomInput, IMetaInfo, IModalContentOperations, IModalContentScreen } from './ModalContentOperations.props'
 import './ModalContentOperations.css'
 

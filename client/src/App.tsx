@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import JwtDecode from 'jwt-decode'
-import { checkAuth } from './API/userApi'
-import AppRouter from './components/AppRouter'
-import { setUser, setIsAuth, setIsAdmin } from './store/action-creators/userActions'
-import { UserInterface } from './store/types/userTypes'
-import './styles/globals.css'
+import { checkAuth } from 'API/userApi'
+import AppRouter from 'components/AppRouter'
+import { setUser, setIsAuth, setIsAdmin } from 'store/action-creators/userActions'
+import { UserInterface } from 'store/types/userTypes'
+import 'styles/globals.css'
 
 const App = () => {
 	const dispatch = useDispatch()

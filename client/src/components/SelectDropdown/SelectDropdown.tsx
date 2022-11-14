@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { useOnClickEsc, useOnClickOutside } from '../../hooks'
-import { ReactComponent as DoneIcon } from '../../assets/done.svg'
-import { ReactComponent as TriangleIcon } from './triangle.svg'
+import { useOnClickEsc, useOnClickOutside } from 'hooks'
+import { ReactComponent as DoneIcon } from 'assets/done.svg'
+import { ReactComponent as TriangleIcon } from 'assets/triangle.svg'
 import { ISelectDropdown } from './SelectDropdown.props'
 import './SelectDropdown.css'
 

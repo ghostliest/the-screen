@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypeSearchMini } from '../../API/types'
+import { TypeSearchMini } from 'API/types'
 import { IMetaInfo } from '../ModalContentOperations/ModalContentOperations.props'
 
 export interface IMultiselect {

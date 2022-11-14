@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTypeSelector } from '../../hooks'
-import { ContentItem, Pagination } from '..'
+import { useTypeSelector } from 'hooks'
+import { ContentItem, Pagination } from 'components'
 import { IContentItemsList } from './ContentItemsList.props'
 import './ContentItemsList.css'
 

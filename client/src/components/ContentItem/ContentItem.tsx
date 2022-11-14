@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FILM_ROUTE } from '../../utils/consts'
-import { ReactComponent as PlayIcon } from '../../pages/Content/play.svg'
-import { useActions } from '../../hooks'
-import { ImgSkeleton } from '../Skeleton/ImgSkeleton'
+import { FILM_ROUTE } from 'utils/consts'
+import { ReactComponent as PlayIcon } from 'assets/play.svg'
+import { useActions } from 'hooks'
+import { ImgSkeleton } from 'components/Skeleton/ImgSkeleton'
 import { IContentItemProps } from './ContentItem.props'
-import { textCrop } from '../../utils'
+import { textCrop } from 'utils'
 import './ContentItem.css'
 
 export const ContentItem = ({ content: { id, img, title, year, completionYear, isFilm, details, rating }, visibleRate = true }: IContentItemProps) => {

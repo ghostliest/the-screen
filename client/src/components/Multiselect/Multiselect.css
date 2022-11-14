@@ -52,6 +52,7 @@
 
 .select-separator {
 	height: 20px;
+	margin-right: 2px;
 }
 
 
@@ -96,7 +97,15 @@
 	fill: #1ae200;
 }
 
-/* .select_dropdown-indicator {} */
+.select_dropdown-indicator {
+	transform: rotate(90deg);
+}
+
+.select_dropdown-indicator > svg {
+	fill: #fff;
+	width: 15px;
+	height: 15px;
+}
 
 
 

@@ -1,5 +1,20 @@
-import { IFilmsAndCount } from '../../../../server/interfaces/services/IFilmService'
 /* eslint-disable no-unused-vars */
+
+export interface IFilmsAndCount {
+	count: number,
+	rows: [{
+		id: number,
+		title: string,
+		year: number,
+		img: string,
+		isFilm: boolean,
+		completionYear: number | null,
+		ratingsCount: number,
+		starsCount: number,
+		youtubeTrailerKey: string
+	}]
+}
+
 export interface IInitialContentState {
 	isLoading: boolean,
 	trailer: ITrailer,
@@ -65,10 +80,6 @@ export enum ContentActionTypesEnum {
 	SET_CONTENT_LIST = 'SET_CONTENT_LIST',
 	SET_SHOW_TRAILER = 'SET_SHOW_TRAILER'
 }
-
-// export interface typeItem {
-// 	id: number | null, name: string
-// }
 
 export interface TrailerAction {
 	type: ContentActionTypesEnum.SET_SHOW_TRAILER,

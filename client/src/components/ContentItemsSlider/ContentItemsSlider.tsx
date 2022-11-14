@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ContentItem } from '..'
-import { useIntersection, useInterval } from '../../hooks'
-import { ButtonArrow } from '../ButtonArrow/ButtonArrow'
+import { ContentItem, ButtonArrow } from 'components'
+import { useIntersection, useInterval } from 'hooks'
 import { IContentItemsSlider } from './ContentItemsSlider.props'
 import './ContentItemsSlider.css'
 

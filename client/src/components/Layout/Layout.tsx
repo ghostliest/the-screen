@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import { Header } from '..'
-import { useTypeSelector } from '../../hooks'
+import { Header } from 'components'
+import { useTypeSelector } from 'hooks'
 import './Layout.css'
 
 export const Layout = ({ children }: { children: ReactNode }) => {

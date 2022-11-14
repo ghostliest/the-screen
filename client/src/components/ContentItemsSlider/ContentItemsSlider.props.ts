@@ -1,4 +1,4 @@
-import { IMiniContent } from '../../store/types/contentTypes'
+import { IMiniContent } from 'store/types/contentTypes'
 
 export interface IContentItemsSlider {
 	content: IMiniContent[],

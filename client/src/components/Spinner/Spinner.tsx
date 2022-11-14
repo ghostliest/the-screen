@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import { ReactComponent as SpinnerIcon } from './Spinner.svg'
+import { ReactComponent as SpinnerIcon } from 'assets/spinner.svg'
 import { ISpinner } from './Spinner.props'
 import styles from './Spinner.module.css'
 

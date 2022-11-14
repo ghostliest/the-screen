@@ -81,7 +81,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	gap: 50px;
+	gap: 5%;
 	justify-content: end;
 	width: 100%;
 }

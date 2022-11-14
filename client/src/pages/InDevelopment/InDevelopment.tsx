@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { randomInRange } from '../../utils/randomInRange'
+import { randomInRange } from 'utils/randomInRange'
 import { IInDevelopment } from './InDevelopment.props'
 
 export const InDevelopment = ({ header = 'THIS PAGE IS UNDER DEVELOPMENT', gifferIds = ['2of', '2jzm', '74Vj', '2rM', '4QVQ'] }: IInDevelopment) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { ContentItemsSlider } from '..'
-import { getAllByIds } from '../../API/contentApi'
-import LocalStorageHistory from '../../utils/LocalStorageHistory'
+import { ContentItemsSlider } from 'components'
+import { getAllByIds } from 'API/contentApi'
+import { LocalStorageHistory } from 'utils'
 import { IHistorySlider } from './HistorySlider.props'
 import './HistorySlider.css'
 
