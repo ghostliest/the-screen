@@ -199,7 +199,7 @@ export default class FilmController extends BaseController implements IFilmContr
 			const film = await getFilm(id)
 			const details: any = await getDetails(id)
 			const rating = await getRating(id)
-			const meta = await getMeta(details.id!, 3)
+			const meta = await getMeta(details.id!, 10)
 
 			delete details.id
 			const result = {
